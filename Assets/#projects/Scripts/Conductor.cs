@@ -11,13 +11,13 @@ public class Conductor : MonoBehaviour
     public float secPerBeat;
 
     //Current song position, in seconds
-    public float songPosition;
+    public static float songPosition;
 
     //Current song position, in beats
-    public float songPositionInBeats;
+    public static float songPositionInBeats;
 
     //How many seconds have passed since the song started
-    public float dspSongTime;
+    private float dspSongTime;
 
     //The offest (small period of silence before the song starts) to the first beat of the song in seconds
     public float firstBeatOffset;
@@ -32,7 +32,7 @@ public class Conductor : MonoBehaviour
     public float beatsPerLoop;
 
     //The total number of loops completed since the looping clip first started
-    public int completedLoops = 0;
+    public static int completedLoops = 0;
 
     //The current position of the song within the loop in beats.
     public float loopPositionInBeats;
@@ -56,6 +56,8 @@ public class Conductor : MonoBehaviour
     }
     void Start()
     {
+        //Réinitialiser les variables static (ou bien créer une méthode static "Reset" à appeler quand j'ai besoin)
+
         //Load the AudioSource attached to the Conductor GameObject
         musicSource = GetComponent<AudioSource>();
 
