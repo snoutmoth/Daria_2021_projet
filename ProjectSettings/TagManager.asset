@@ -45,3 +45,9 @@ TagManager:
   - name: Arrow
     uniqueID: 83353325
     locked: 0
+  - name: TopButton
+    uniqueID: 3227484353
+    locked: 0
+  - name: New Layer
+    uniqueID: 2817089691
+    locked: 0
