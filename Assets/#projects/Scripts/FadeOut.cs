@@ -13,13 +13,14 @@ public class FadeOut : MonoBehaviour
 
     void Update(){
 
-        Fading();
+        
     }
-    void Fading()
+    void Fading(float t)
     {
+        //t++;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(FadeTo(0.0f, 0.5f));
+            StartCoroutine(FadeTo(0.0f, 0.2f));
         }
 
     }
@@ -31,7 +32,13 @@ public class FadeOut : MonoBehaviour
         {
             Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, aValue, t));
             transform.GetComponent<SpriteRenderer>().material.color = newColor;
-            yield return null;
+            if (Input.GetKeyDown(KeyCode.Space)) 
+            {
+                yield return null;
+            }
+            
+            //regarder si bouton a été appuyé
+            
         }
 
     }
